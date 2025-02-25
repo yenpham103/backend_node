@@ -10,6 +10,10 @@ app.use(helmet()); // Bảo vệ các thông tin header quan trọng
 app.use(compression()) // Giảm kích thước dữ liệu truyền tải
 
 // init database
+require('./dbs/init.mongodb');
+const { countConnect, checkOverLoad } = require('./helpers/check.connect');
+countConnect();
+// checkOverLoad()
 
 // init routes
 app.get('/', (req, res) => {
