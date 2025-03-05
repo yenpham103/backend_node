@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -16,11 +17,7 @@ countConnect();
 // checkOverLoad()
 
 // init routes
-app.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'Hello, world!'
-    })
-})
+app.use("/", require('./routes'));
 
 // handle errors
 
