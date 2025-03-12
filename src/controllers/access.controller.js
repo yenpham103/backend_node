@@ -7,7 +7,6 @@ class AccessController {
         } catch (error) {
             next(error);
         }
-
     }
 }
 module.exports = new AccessController();
